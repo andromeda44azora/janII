@@ -1,16 +1,14 @@
 import pandas as pd #Failu apstrāde
-import matplotlib.pyplot as plt #grafiki
-import seaborn as sb #vizualizācija
-
+import matplotlib.pyplot as plt #Grafiki
+import seaborn as sb #Vizualizācija
 sb.set_style('whitegrid')
-plt.rcParams['figure.figsize']=(15,10)
-
+plt.rcParams['figure.figsize']=(15,10) # plot size
 
 def karstuma_karte(datne):
     datu_fails = pd.read_csv(datne).select_dtypes('number')
     sb.heatmap(datu_fails.corr(), annot=True, cmap='magma')
     plt.show()
-    return
+
 
 def datu_biezums(datne, kolonna):
     datu_fails = pd.read_csv(datne)
@@ -22,10 +20,10 @@ def datu_biezums(datne, kolonna):
     plt.show()
     return
 
-
-datne1 = 'masinmacisanas/dati/auto_simple.csv'
-datne2 = 'masinmacisanas/dati/auto_imports.csv'
+datne1 = "masinmacisanas/dati/auto_simple.csv"
+datne2 = "masinmacisanas/dati/auto_imports.csv"
 
 # karstuma_karte(datne2)
-datu_biezums(datne2, "price")
+
+datu_biezums(datne1, "Volume")
 
